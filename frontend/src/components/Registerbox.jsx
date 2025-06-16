@@ -6,7 +6,7 @@ export default function RegisterBox({ onRegister }) {
     Email: "",
     Password: "",
     Contact: "",
-    Age: ""
+    Age: "",
   });
 
   const handleChange = (e) => {
@@ -19,23 +19,48 @@ export default function RegisterBox({ onRegister }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white p-8 shadow-md rounded-lg w-96">
-      <h2 className="text-xl font-bold text-center mb-4">Register</h2>
-      {["Name", "Email", "Password", "Contact", "Age"].map((field) => (
-        <input
-          key={field}
-          name={field}
-          type={field === "Password" ? "password" : "text"}
-          placeholder={field}
-          className="w-full mb-3 px-3 py-2 border rounded"
-          value={form[field]}
-          onChange={handleChange}
-          required
-        />
-      ))}
-      <button className="bg-green-500 w-full py-2 text-white rounded hover:bg-green-600">
-        Register
-      </button>
+    <form onSubmit={handleSubmit} className="register-form">
+      <input
+        name="Name"
+        type="text"
+        placeholder="Name"
+        value={form.Name}
+        onChange={handleChange}
+        required
+      />
+      <input
+        name="Email"
+        type="email"
+        placeholder="Email"
+        value={form.Email}
+        onChange={handleChange}
+        required
+      />
+      <input
+        name="Password"
+        type="password"
+        placeholder="Password"
+        value={form.Password}
+        onChange={handleChange}
+        required
+      />
+      <input
+        name="Contact"
+        type="text"
+        placeholder="Contact"
+        value={form.Contact}
+        onChange={handleChange}
+        required
+      />
+      <input
+        name="Age"
+        type="number"
+        placeholder="Age"
+        value={form.Age}
+        onChange={handleChange}
+        required
+      />
+      <button type="submit">Register</button>
     </form>
   );
 }
