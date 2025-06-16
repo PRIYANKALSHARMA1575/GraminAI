@@ -59,3 +59,15 @@ export async function registerUser(Name, Email, Password, Contact, Age) {
     throw new Error("Registration failed");
   }
 }
+
+export async function getUserProfile(email) {
+  const response = await axios.get(`${BASE_URL}/profile/${email}`);
+  if (response.status === 200) {
+    return response.data;
+  } else {
+    throw new Error("Failed to fetch user profile");
+  }
+}
+
+
+

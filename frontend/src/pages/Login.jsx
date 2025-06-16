@@ -8,14 +8,20 @@ export default function Login() {
   const navigate = useNavigate();
 
   const handleLogin = async (email, password) => {
-    try {
-      await loginUser(email, password);
-      alert("Login successful");
-      navigate("/dashboard");
-    } catch (err) {
-      alert("Login failed");
-    }
-  };
+  try {
+    const { user } = await loginUser(email, password);
+
+    localStorage.setItem("userEmail", user.Email); // Store email for dashboard/profile use
+
+    alert("Login successful");
+    navigate("/dashboard");
+  } catch (err) {
+    console.error("Login error:", err.message);
+    alert("Login failed");
+  }
+};
+
+
 
   return (
     <div className="page"> 

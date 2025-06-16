@@ -17,7 +17,7 @@ export default function Register() {
         formData.Age
       );
       alert("Registration successful");
-      navigate("/login");
+      navigate("/");
     } catch (err) {
       alert("Registration failed: " + err.message);
     }
