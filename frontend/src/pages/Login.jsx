@@ -9,7 +9,7 @@ export default function Login() {
     try {
       await loginUser(email, password);
       alert("Login successful");
-      navigate("/dashboard"); // update if needed
+      navigate("/dashboard"); 
     } catch (err) {
       alert("Login failed");
     }
