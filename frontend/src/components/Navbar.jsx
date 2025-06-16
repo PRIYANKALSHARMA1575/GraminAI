@@ -1,30 +1,36 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import './Navbar.css'; // Contains styles (see next section)
 
 export default function Navbar({ userName }) {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    localStorage.clear(); // remove email or token
-    navigate('/login');
+    localStorage.clear();
+    navigate('/logout');
   };
 
   return (
-    <nav className="bg-green-700 text-white px-4 py-3 shadow-md flex justify-between items-center">
-      <div className="text-xl font-bold cursor-pointer" onClick={() => navigate('/dashboard')}>
-        🌾 Gramin AI
+    <div className="navbar">
+      {/* ✅ USER NAME AT TOP */}
+      <div className="username-display mb-6">
+        👤 <strong>{userName || 'Loading...'}</strong>
       </div>
-      <div className="hidden md:flex space-x-4 items-center">
-        <button onClick={() => navigate('/dashboard')} className="hover:underline">Dashboard</button>
-        <button onClick={() => navigate('/profile')} className="hover:underline">Profile</button>
-        <button onClick={() => navigate('/help')} className="hover:underline">Help</button>
-        {userName && (
-          <span className="text-sm font-medium">👤 {userName}</span>
-        )}
-        <button onClick={handleLogout} className="bg-white text-green-700 px-3 py-1 rounded-md hover:bg-gray-100">
-          Logout
-        </button>
+
+      <div className="navbar-buttons">
+        <button onClick={() => navigate('/dashboard')}>📊 Dashboard</button>
+        <button onClick={() => navigate('/chatbot')}>🤖 Chatbot</button>
+        <button onClick={() => navigate('/crop-recommendation')}>🌾 Crop Recommendation</button>
+        <button onClick={() => navigate('/pest-identification')}>🐛 Pest Identification</button>
+        <button onClick={() => navigate('/Disease-Identification')}>🩺 Disease Identification</button>
+        <button onClick={() => navigate('/schemes')}>🏛️ Schemes</button>
+        <button onClick={() => navigate('/profile')}>👤 Profile</button>
+        <button onClick={() => navigate('/help')}>❓ Help</button>
       </div>
-    </nav>
+
+      <div className="navbar-footer">
+        <button className="logout-button" onClick={handleLogout}>Logout</button>
+      </div>
+    </div>
   );
 }
