@@ -1,0 +1,44 @@
+.chatbot-page {
+  display: flex;
+  background-color: #e6f4ea; /* light green background */
+  height: 100vh;
+  font-family: sans-serif;
+}
+
+.chatbot-layout {
+  margin-left: 240px; /* adjust if navbar width changes */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+.chatbot-messages {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.chatbot-qna {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 1rem;
+}
+
+.qna {
+  background-color: #ffffff;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.question {
+  font-weight: bold;
+  color: #047857;
+}
+
+.answer {
+  margin-top: 0.5rem;
+}
