@@ -205,27 +205,27 @@ userRoutes.post("/login", async (req, res) => {
 userRoutes.get("/profile/:email", async (req, res) => {
   try {
     const email = req.params.email;
-
-    if (!email) {
-      return res.status(400).json({ message: "Email is required" });
-    }
+    console.log("Fetching profile for email:", email);
 
     const db = database.getDb();
     const user = await db.collection("users").findOne({ Email: email });
 
     if (!user) {
+      console.log("No user found with email:", email);
       return res.status(404).json({ message: "User not found" });
     }
 
+    console.log("User profile found:", user);
     res.status(200).json({
       Name: user.Name,
       Email: user.Email
     });
   } catch (err) {
-    console.error("Profile fetch error:", err.message);
-    res.status(500).json({ message: "Server Error" });
+    console.error("Profile fetch error:", err);
+    res.status(500).json({ message: "Server Error", error: err.message });
   }
 });
+
 
 
 module.exports = userRoutes;

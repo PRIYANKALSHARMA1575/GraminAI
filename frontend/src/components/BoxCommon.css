@@ -1,0 +1,24 @@
+.box-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.welcome-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #d1fae5; /* Tailwind green-100 */
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.chatbot-icon {
+  background-color: #047857; /* Tailwind green-700 */
+  color: white;
+  border-radius: 9999px;
+  padding: 0.5rem;
+  font-size: 1.1rem;
+}

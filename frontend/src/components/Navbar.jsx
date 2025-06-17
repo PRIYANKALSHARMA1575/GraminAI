@@ -16,7 +16,10 @@ export default function Navbar({ userName }) {
       <div className="username-display mb-6">
         👤 <strong>{userName || 'Loading...'}</strong>
       </div>
-
+      <br>
+      </br>
+      <br>
+      </br>
       <div className="navbar-buttons">
         <button onClick={() => navigate('/dashboard')}>📊 Dashboard</button>
         <button onClick={() => navigate('/chatbot')}>🤖 Chatbot</button>
@@ -28,9 +31,8 @@ export default function Navbar({ userName }) {
         <button onClick={() => navigate('/help')}>❓ Help</button>
       </div>
 
-      <div className="navbar-footer">
         <button className="logout-button" onClick={handleLogout}>Logout</button>
-      </div>
+      
     </div>
   );
 }

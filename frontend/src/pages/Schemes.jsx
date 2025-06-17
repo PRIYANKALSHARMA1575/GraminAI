@@ -1,8 +1,9 @@
-
+import Navbar from '../components/Navbar';
 
 export default function Schemes() {
     return (
         <>
+         <Navbar/>
             <h1>Welcome to the Schemes Page</h1>
             <p>Here you can find various schemes available.</p>
             <ul>

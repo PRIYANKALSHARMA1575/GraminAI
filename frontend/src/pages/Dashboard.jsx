@@ -1,10 +1,23 @@
 import React, { useEffect, useState } from 'react';
+import './Dashboard.css';
 import Navbar from '../components/Navbar';
 import { getUserProfile } from '../api';
+
+import WeatherBox from '../components/Weatherbox'; 
+import WelcomeBox from '../components/Welcomebox'; // Assuming you have a WelcomeBox component
+import MarketPriceBox from '../components/MarketPricebox'; // Assuming you have a MarketPrice component
+import CropRecommendationBox from '../components/CropRecommendationbox'; // Assuming you have a CropRecommendation component
+import PestIdentificationBox from '../components/PestIdentificationbox'; // Assuming you have a PestIdentification component
+import DiseaseIdentificationBox from '../components/DiseaseIdentificationbox'; // Assuming you have a DiseaseIdentification component
+import ChatbotBox from '../components/Chatbotbox'; // Assuming you have a Chatbot component
+import CropSchemesBox from '../components/CropSchemesbox'; // Assuming you have a CropSchemes component
+
+
 
 export default function Dashboard() {
   const [userName, setUserName] = useState('');
   const [location, setLocation] = useState(null);
+  const [weatherData, setWeatherData] = useState(null);
 
   useEffect(() => {
      const email = localStorage.getItem('userEmail');
@@ -25,6 +38,8 @@ export default function Dashboard() {
         pos => {
           const { latitude, longitude } = pos.coords;
           setLocation({ latitude, longitude });
+
+          fetchWeather(latitude,longitude);
         },
         err => {
           console.error('Location access denied:', err);
@@ -33,26 +48,35 @@ export default function Dashboard() {
     }
   }, []);
 
+  const fetchWeather = async (lat, lon) => {
+    try{
+      const apiKey='17a7024458e9f7e9f7b45df92d0a868b';
+      const res=await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`
+      );
+      const data=await res.json();
+      setWeatherData(data);
+    }catch(err){
+      console.error('Error fetching weather data:', err);
+    }
+      
+    }
   return (
-    <div className="min-h-screen bg-gray-100">
-      {/* Left Navbar */}
-      <Navbar userName={userName} />
+    <div className="dashboard-layout">
+      <div className="navbar">
+        <Navbar userName={userName} />
+      </div>
 
-      {/* Main content with left padding to make space for navbar */}
-      <div className="pl-[260px] p-6">
-        <h1 className="text-3xl font-bold mb-6 text-green-800">
-          👋 Welcome {userName}!
-        </h1>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="bg-white shadow-lg rounded-xl p-4">☁️ Weather Summary</div>
-          <div className="bg-white shadow-lg rounded-xl p-4">🌾 Crop Recommendation</div>
-          <div className="bg-white shadow-lg rounded-xl p-4">📸 Upload Pest Image</div>
-          <div className="bg-white shadow-lg rounded-xl p-4">🩺 Identify Plant Disease</div>
-          <div className="bg-white shadow-lg rounded-xl p-4">📈 Market Price</div>
-          <div className="bg-white shadow-lg rounded-xl p-4">🏛️ Government Schemes</div>
-          <div className="bg-white shadow-lg rounded-xl p-4">🎤 Voice Assistant</div>
-          <div className="bg-white shadow-lg rounded-xl p-4">📚 Personal Summary</div>
+      <div className="dashboard-content">
+        <div className="dashboard-grid">
+          <div className="welcome"><WelcomeBox userName={userName} /></div>
+          <div className="weather"><WeatherBox location={location} /></div>
+          <div className="scheme"><CropSchemesBox /></div>
+          <div className="crop"><CropRecommendationBox /></div>
+          <div className="market"><MarketPriceBox /></div>
+          <div className="disease"><DiseaseIdentificationBox /></div>
+          <div className="pest"><PestIdentificationBox /></div>
+          <div className="chatbot"><ChatbotBox /></div>
         </div>
       </div>
     </div>

@@ -1,10 +1,11 @@
 
-
-export default function CropRecommendation() {
+import Navbar from '../components/Navbar';
+export default function PestIdentification() {
   return (
     <>
-      <h1>Crop Recommendation</h1>
-      <p>Use this page to get recommendations on which crops to plant based on your soil and weather conditions.</p>
+     <Navbar/>
+      <h1>Pest Identification</h1>
+      <p>Use this page to get recommendations on which crops to plant based on yous.</p>
       {/* Add form or components for crop recommendation here */}
     </>
   );

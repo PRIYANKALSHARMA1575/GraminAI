@@ -1,0 +1,110 @@
+/* Main layout container */
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f3f4f6; /* Tailwind gray-100 */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Sidebar (navbar) */
+.navbar {
+  width: 250px;
+  background-color: #ffffff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 10;
+  padding: 1rem;
+}
+
+/* Right side content area */
+.dashboard-content {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+/* Grid layout */
+.dashboard-grid {
+  margin-left: 240px; /* Match navbar width */
+  padding: 20px;
+  display: grid;
+  grid-template-areas:
+    "welcome welcome chatbot"
+    "weather scheme chatbot"
+    "crop market chatbot"
+    "disease pest chatbot";
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  min-height: 100vh;
+}
+
+
+/* Common styling for all boxes */
+.welcome,
+.weather,
+.scheme,
+.crop,
+.market,
+.disease,
+.pest,
+.chatbot {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  padding: 1.25rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.welcome:hover,
+.weather:hover,
+.scheme:hover,
+.crop:hover,
+.market:hover,
+.disease:hover,
+.pest:hover,
+.chatbot:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Grid area mapping */
+.welcome { grid-area: welcome; }
+.weather { grid-area: weather; }
+.scheme  { grid-area: scheme; }
+.crop    { grid-area: crop; }
+.market  { grid-area: market; }
+.disease { grid-area: disease; }
+.pest    { grid-area: pest; }
+
+.chatbot {
+  grid-area: chatbot;
+  position: sticky;
+  top: 1rem;
+  align-self: start;
+  height: fit-content;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 1024px) {
+  .dashboard-grid {
+    grid-template-areas:
+      "welcome"
+      "weather"
+      "scheme"
+      "crop"
+      "market"
+      "disease"
+      "pest"
+      "chatbot";
+    grid-template-columns: 1fr;
+  }
+
+  .navbar {
+    display: none; /* hide sidebar on mobile */
+  }
+
+  .dashboard-content {
+    padding: 1rem;
+  }
+}

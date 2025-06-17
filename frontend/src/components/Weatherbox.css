@@ -1,0 +1,14 @@
+.weather-box {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  color: #1f2937; /* gray-800 */
+  margin-bottom: 2rem;
+}
+
+.weather-box.loading {
+  color: #6b7280; /* gray-500 */
+  font-style: italic;
+}

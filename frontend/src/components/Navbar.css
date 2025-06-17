@@ -1,21 +1,24 @@
-/* Navbar.css */
-
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 240px;
   height: 100vh;
-  background-color: #047857; /* Tailwind's green-700 */
+  background-color: #047857;
   color: white;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   padding: 1rem;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
+.navbar-top {
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
 .navbar-buttons {
+  flex-grow: 1; /* takes available space */
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -36,12 +39,6 @@
   text-decoration: underline;
 }
 
-.navbar-footer {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
 .logout-button {
   background-color: white;
   color: #047857;
@@ -49,8 +46,9 @@
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  margin-bottom: 2rem; /* ✅ lifts it above bottom */
 }
 
 .logout-button:hover {
-  background-color: #f3f4f6; /* Tailwind's gray-100 */
+  background-color: #f3f4f6;
 }

@@ -10,6 +10,7 @@ import Profile from "./pages/Profile"; // Assuming you have a Profile component
 import Schemes from "./pages/Schemes"; // Assuming you have a Schemes component
 import Help from "./pages/Help"; // Assuming you have a Help component
 import Logout from "./pages/Logout"; // Assuming you have a Logout component
+import DiseaseIdentification from "./pages/DiseaseIdentification";
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/chatbot" element={<Chatbot />} />
         <Route path="/crop-recommendation" element={<CropRecommendation />} />
-        <Route path="/pest-identification" element={<CropRecommendation />} />
+        <Route path="/pest-identification" element={<PestIdentification />} />
+        <Route path="/Disease-identification" element={<DiseaseIdentification />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/schemes" element={<Schemes />} />
         <Route path="/help" element={<Help />} />
