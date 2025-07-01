@@ -67,22 +67,23 @@ npm run dev
 Visit http://localhost:3000
 
 🌍 Supported Languages
+
 🇮🇳 All 23 official Indian languages including Hindi, Tamil, Telugu, Kannada, Malayalam, Bengali, Marathi, Punjabi, Gujarati, Assamese, Odia, and more.
 
 📷 Screenshots
-Plant Disease Detection	Market Price Prediction	Regional Language Chat
+
+Under-Development Stage.
 
 📡 Planned Features
+
 🌾 Offline capabilities for low-connectivity rural regions.
 
 🌦️ Smart AI Crop Advisory based on real-time weather and soil conditions.
 
 🎥 Interactive community forums and video Q&A with agricultural experts.
 
-🤝 Contributions
-Contributions are welcome! Fork, raise issues, or suggest features to improve this platform.
-
 📃 License
+
 Open-source under MIT License.
 
 Empowering Indian Farmers with AI, One Language at a Time! 🇮🇳🌾
