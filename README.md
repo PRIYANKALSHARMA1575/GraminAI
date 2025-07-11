@@ -1,7 +1,9 @@
 **🌾 Farmer AI Assistant — Multilingual Smart Agriculture Web Platform 🇮🇳**
                                                                                     
 
-An inclusive, AI-powered web application designed for Indian farmers to detect plant diseases, access crop market insights, and stay informed, all through images, voice, text, and live multimedia content, available in 23 official Indian languages. (Under-Development for scalability and inclusivity. Under-Development for adding more features and improvising exisiting ones)
+An inclusive, AI-powered web application designed for Indian farmers to detect plant diseases, access crop market insights, and stay informed, all through images, voice, text, and live multimedia content, available in 23 official Indian languages. 
+
+**(Under-Development for scalability and inclusivity. Under-Development for adding more features and improvising exisiting ones)**
 
 📌 Key Features
 
