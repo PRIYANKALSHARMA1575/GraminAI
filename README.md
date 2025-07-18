@@ -91,3 +91,13 @@ Open-source under MIT License.
 
 Empowering Indian Farmers with AI, One Language at a Time! 🇮🇳🌾
 
+A Sample overview of how it looks, we are currently working on to convert to react native for easy usuage to mobile. It is also possible to speak and also get answers in any language we choose from. This is currently in the developmental phase.
+
+![WhatsApp Image 2025-07-18 at 10 12 46_29d9cd09](https://github.com/user-attachments/assets/61ad8b14-56ef-4172-890a-ed589ad87255)
+
+<img width="421" height="807" alt="image" src="https://github.com/user-attachments/assets/48967de1-64c5-474a-ba91-b83e3f772856" />
+
+<img width="280" height="592" alt="image" src="https://github.com/user-attachments/assets/7a7d12f1-181d-4e20-9ade-b92b1b75a6c2" />
+
+
+
