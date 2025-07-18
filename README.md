@@ -91,7 +91,8 @@ Open-source under MIT License.
 
 Empowering Indian Farmers with AI, One Language at a Time! 🇮🇳🌾
 
-A Sample overview of how it looks, we are currently working on to convert to react native for easy usuage to mobile. It is also possible to speak and also get answers in any language we choose from. This is currently in the developmental phase.
+A Sample overview of how it looks, we are currently working on to convert to react native for easy usuage to mobile. It is also possible to speak and also get answers in any language we choose from. This is currently in the developmental phase. Once it is ready for production, we will post a video about it in youtube. Stay Tuned!
+
 
 ![WhatsApp Image 2025-07-18 at 10 12 46_29d9cd09](https://github.com/user-attachments/assets/61ad8b14-56ef-4172-890a-ed589ad87255)
 
