@@ -1,8 +1,0 @@
-Flask
-flask-cors
-python-dotenv
-requests
-Pillow
-openai-whisper
-torch
-google-cloud-texttospeech
