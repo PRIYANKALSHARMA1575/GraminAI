@@ -81,9 +81,13 @@ text
 
 ---
 
-## 📷 Screenshots
+## 📷 Insights
 
-_**App is under active development—screenshots and production preview coming soon!**_
+_**Here is a quick video insight of what the AI Agent for plant pest-dosease detection and solutions that is compactible and usuable to almost all Indian Lamguages is shown in this video. Stay tuned for more such insights**
+
+https://youtu.be/wnN4rh_y_VE?feature=shared
+
+_**App is under active development—screenshots and production preview will be available soon, however we will.keep updating with more insights, as of now starting with the AI Agent.**
 
 ---
 
