@@ -1,104 +1,106 @@
-**🌾 Farmer AI Assistant — Multilingual Smart Agriculture Web Platform 🇮🇳**
-                                                                                    
+# 🌾 Farmer AI Assistant — Multilingual Smart Agriculture Platform 🇮🇳
 
-An inclusive, AI-powered web application designed for Indian farmers to detect plant diseases, access crop market insights, and stay informed, all through images, voice, text, and live multimedia content, available in 23 official Indian languages. 
+An **inclusive, AI-powered mobile and web application** empowering Indian farmers to detect plant diseases, access real-time market and weather insights, and stay updated on government schemes—all through images, voice, text, and rich multimedia. **Available in 23 official Indian languages**, the platform is under active development for scalability and innovative features.
 
-**(Under-Development for scalability and inclusivity. Under-Development for adding more features and improvising exisiting ones)**
+---
 
-📌 Key Features
+## 🚀 Key Features
 
-✅ Plant Disease Detection via image uploads or real-time camera capture.
+- ✅ **Plant Disease Detection** via image uploads or real-time camera (mobile & web).
+- ✅ **Voice-enabled Queries** using OpenAI Whisper for speech-to-text in regional languages.
+- ✅ **Vision-Language AI (Qwen-VL)** for instant, detailed crop health assessment in the farmer's chosen language.
+- ✅ **Market Price Prediction** tailored to specific crops, locations, and seasons.
+- ✅ **Real-Time Weather Alerts** powered by AI for hyperlocal smart farming decisions.
+- ✅ **Government Schemes Dashboard** — Up-to-date info on policies, subsidies, and programs.
+- ✅ **Agriculture News Feed** — Curated daily news, updates, and essential coverage.
+- ✅ **Education Videos & Live TV** — Addressing farming challenges with expert insights.
+- ✅ **[NEW] Inclusive Multilingual UI** — Seamless navigation in all 23 Indian languages, optimized for rural usability.
 
-✅ Voice-enabled queries using OpenAI Whisper for speech-to-text in regional languages.
+---
 
-✅ Vision-Language AI (Qwen-VL) providing detailed crop health insights in the farmer's chosen language.
+## 🛠️ Tech Stack
 
-✅ Market Price Prediction for specific crops, regions, and seasons, ensuring fair selling opportunities.
+| Area        | Technologies                                                                 |
+|-------------|------------------------------------------------------------------------------|
+| **Frontend**| **React Native** (Expo Go), React.js, HTML5/CSS3, JavaScript, React Webcam   |
+| **Backend** | **Python**, **Flask**, Node.js, REST APIs                                    |
+| **AI/ML**   | **OpenAI Whisper** (Speech-to-Text), Qwen 2.5 Vision-Language (via OpenRouter), ElevenLabs (Text-to-Speech)<br>Future: Market Price Prediction, Weather AI Agent |
+| **Other**   | dotenv (Secrets Management), Pillow (Image Processing), Flask-CORS (CORS), Requests, Full Multilingual Support  |
 
-✅ Real-Time Weather Alerts fetched using AI agents for hyperlocal decision-making.
+---
 
-✅ Government Schemes Dashboard — Live updates on policies, subsidies, and initiatives.
+## 🔗 AI Agent Integrations
 
-✅ Agriculture News Feed — Daily news updates and essential coverage relevant to farmers.
+- **OpenRouter** — Connects all vision-language and conversational AI for agricultural analysis.
+- **Whisper (OpenAI)** — Powers robust multilingual speech-to-text for local dialects and accents.
+- **ElevenLabs** — Delivers natural, regional-language voice feedback via advanced text-to-speech.
 
-✅ Educational Videos & Live TV addressing common farming challenges and expert insights.
+---
 
-✅ Inclusive Multilingual UI supporting all 23 Indian languages with easy navigation for rural accessibility.
+## 🏗️ System Architecture
 
-🛠️ Tech Stack
+> React Native (Expo Go) & React.js frontend ⇆ Flask/Node.js backend ⇆ AI agents (OpenRouter, Whisper, ElevenLabs, custom inference models)  
+> All systems support **multilingual workflows and regional content delivery**.
 
-Frontend	Backend	AI/ML Models	Others
+---
 
-React.js	Flask (Python)	OpenAI Whisper (Speech-to-Text)	dotenv (Secrets management)
+## 🚀 How to Run Locally
 
-HTML5/CSS3	REST APIs	Qwen 2.5 Vision-Language	Pillow (Image Processing)
-
-JavaScript	Python 3.10.x	Market Price Prediction (Planned)	CORS, Requests
-
-React Webcam	Flask-CORS	Weather AI Agent (Planned)	Multilingual Support
-
-🎯 System Architecture
-
-🚀 How to Run Locally
-
-1. Clone the Repository
-   
 git clone https://github.com/your-username/farmer-ai-assistant.git
-
 cd farmer-ai-assistant
 
-2. Backend Setup
-   
-cd backend
+text
 
+### Backend (Python/Flask)
+cd backend
 python -m venv venv
 
-venv\Scripts\activate  # For Windows
+For Windows:
+venv\Scripts\activate
 
+For macOS/Linux:
+source venv/bin/activate
 pip install -r requirements.txt
-
 python app.py
 
-3. Frontend Setup
-   
+text
+
+### Frontend (React Native/Expo Go)
 cd frontend
-
 npm install
+npx expo start
 
-npm run dev
+text
+- Scan the QR code in Expo Go app (iOS/Android) or open the web version at [http://localhost:3000](http://localhost:3000/)
 
-Visit http://localhost:3000
+---
 
-🌍 Supported Languages
+## 🌍 Supported Languages
 
-🇮🇳 All 23 official Indian languages including Hindi, Tamil, Telugu, Kannada, Malayalam, Bengali, Marathi, Punjabi, Gujarati, Assamese, Odia, and more.
+🇮🇳 Supports **all 23 official Indian languages** including Hindi, Tamil, Telugu, Kannada, Malayalam, Bengali, Marathi, Punjabi, Gujarati, Assamese, Odia, Urdu, and more.
 
-📷 Screenshots
+---
 
-Under-Development Stage.
+## 📷 Screenshots
 
-📡 Planned Features
+_**App is under active development—screenshots and production preview coming soon!**_
 
-🌾 Offline capabilities for low-connectivity rural regions.
+---
 
-🌦️ Smart AI Crop Advisory based on real-time weather and soil conditions.
+## 📡 Planned Features
 
-🎥 Interactive community forums and video Q&A with agricultural experts.
+- 🌾 **Offline Mode** for remote, low-connectivity regions.
+- 🌦️ **Smart AI Crop Advisory** (weather, soil, and crop analysis).
+- 🎥 **Interactive Community Forums & Video Q&A** with agritech experts.
+- 🛡️ **Advanced Security & Privacy** features for user protection.
 
-📃 License
+---
 
-Open-source under MIT License.
+## 📃 License
 
-Empowering Indian Farmers with AI, One Language at a Time! 🇮🇳🌾
+Open-source under [MIT License](LICENSE).
 
-A Sample overview of how it looks, we are currently working on to convert to react native for easy usuage to mobile. It is also possible to speak and also get answers in any language we choose from. This is currently in the developmental phase. Once it is ready for production, we will post a video about it in youtube. Stay Tuned!
+> _Empowering Indian Farmers with AI, One Language at a Time!_ 🇮🇳🌾
 
-
-![WhatsApp Image 2025-07-18 at 10 12 46_29d9cd09](https://github.com/user-attachments/assets/61ad8b14-56ef-4172-890a-ed589ad87255)
-
-<img width="421" height="807" alt="image" src="https://github.com/user-attachments/assets/48967de1-64c5-474a-ba91-b83e3f772856" />
-
-<img width="280" height="592" alt="image" src="https://github.com/user-attachments/assets/7a7d12f1-181d-4e20-9ade-b92b1b75a6c2" />
-
-
-
+---
+_Last updated: Tuesday, July 22, 2025_
