@@ -13,7 +13,6 @@ An **inclusive, AI-powered mobile and web application** empowering Indian farmer
 - ✅ **Real-Time Weather Alerts** powered by AI for hyperlocal smart farming decisions.
 - ✅ **Government Schemes Dashboard** — Up-to-date info on policies, subsidies, and programs.
 - ✅ **Agriculture News Feed** — Curated daily news, updates, and essential coverage.
-- ✅ **Education Videos & Live TV** — Addressing farming challenges with expert insights.
 - ✅ **[NEW] Inclusive Multilingual UI** — Seamless navigation in all 23 Indian languages, optimized for rural usability.
 
 ---
@@ -23,7 +22,7 @@ An **inclusive, AI-powered mobile and web application** empowering Indian farmer
 | Area        | Technologies                                                                 |
 |-------------|------------------------------------------------------------------------------|
 | **Frontend**| **React Native** (Expo Go), React.js, HTML5/CSS3, JavaScript, React Webcam   |
-| **Backend** | **Python**, **Flask**, Node.js, REST APIs                                    |
+| **Backend** | **Python**, **Flask**, Node.js, REST APIs, PyTorc                            |
 | **AI/ML**   | **OpenAI Whisper** (Speech-to-Text), Qwen 2.5 Vision-Language (via OpenRouter), ElevenLabs (Text-to-Speech)<br>Future: Market Price Prediction, Weather AI Agent |
 | **Other**   | dotenv (Secrets Management), Pillow (Image Processing), Flask-CORS (CORS), Requests, Full Multilingual Support  |
 
