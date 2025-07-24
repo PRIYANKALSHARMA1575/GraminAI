@@ -22,7 +22,7 @@ An **inclusive, AI-powered mobile and web application** empowering Indian farmer
 | Area        | Technologies                                                                 |
 |-------------|------------------------------------------------------------------------------|
 | **Frontend**| **React Native** (Expo Go), React.js, HTML5/CSS3, JavaScript, React Webcam   |
-| **Backend** | **Python**, **Flask**, Node.js, REST APIs, PyTorc                            |
+| **Backend** | **Python**, **Flask**, Node.js, REST APIs, PyTorch                            |
 | **AI/ML**   | **OpenAI Whisper** (Speech-to-Text), Qwen 2.5 Vision-Language (via OpenRouter), ElevenLabs (Text-to-Speech)<br>Future: Market Price Prediction, Weather AI Agent |
 | **Other**   | dotenv (Secrets Management), Pillow (Image Processing), Flask-CORS (CORS), Requests, Full Multilingual Support  |
 
