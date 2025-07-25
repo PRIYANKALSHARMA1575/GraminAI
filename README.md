@@ -86,8 +86,12 @@ _**Here is a quick video insight of what the AI Agent for plant pest-dosease det
 
 https://youtu.be/wnN4rh_y_VE?feature=shared
 
+Insight 1
+
 <img width="829" height="859" alt="image" src="https://github.com/user-attachments/assets/1a340bd0-2f2f-483c-9748-ecec437c7404" />
 
+
+Insight 2
 <img width="1389" height="686" alt="image" src="https://github.com/user-attachments/assets/34f98f30-e0e7-439c-a88f-3f13e699bc6c" />
 
 
