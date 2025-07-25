@@ -88,6 +88,9 @@ https://youtu.be/wnN4rh_y_VE?feature=shared
 
 <img width="829" height="859" alt="image" src="https://github.com/user-attachments/assets/1a340bd0-2f2f-483c-9748-ecec437c7404" />
 
+<img width="1389" height="686" alt="image" src="https://github.com/user-attachments/assets/34f98f30-e0e7-439c-a88f-3f13e699bc6c" />
+
+
 
 _**App is under active development—screenshots and production preview will be available soon, however we will.keep updating with more insights, as of now starting with the AI Agent.**
 
@@ -109,4 +112,4 @@ Open-source under [MIT License](LICENSE).
 > _Empowering Indian Farmers with AI, One Language at a Time!_ 🇮🇳🌾
 
 ---
-_Last updated: Tuesday, July 22, 2025_
+_Last updated: Tuesday, July 25, 2025_
