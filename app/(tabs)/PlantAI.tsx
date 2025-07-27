@@ -1,4 +1,4 @@
-import { BACKEND_URL } from '@env';
+// import { BACKEND_URL } from '@env';
 import { Audio } from 'expo-av';
 import * as ImagePicker from 'expo-image-picker';
 import React, { useRef, useState } from 'react';
@@ -16,7 +16,6 @@ export default function PlantAI() {
   const [loading, setLoading] = useState(false);
   const recordingRef = useRef<Audio.Recording | null>(null);
 
-  // ✅ Pick image from gallery
   async function pickImage() {
     const res = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.Images,
@@ -25,7 +24,6 @@ export default function PlantAI() {
     if (!res.canceled) setImageUri(res.assets[0].uri);
   }
 
-  // ✅ Take photo using camera
   async function snapPhoto() {
     const res = await ImagePicker.launchCameraAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.Images,
@@ -34,7 +32,6 @@ export default function PlantAI() {
     if (!res.canceled) setImageUri(res.assets[0].uri);
   }
 
-  // ✅ Start recording audio
   async function startRecording() {
     try {
       const { granted } = await Audio.requestPermissionsAsync();
@@ -50,7 +47,6 @@ export default function PlantAI() {
     }
   }
 
-  // ✅ Stop recording audio
   async function stopRecording() {
     const recording = recordingRef.current;
     if (!recording) return;
@@ -59,7 +55,6 @@ export default function PlantAI() {
     recordingRef.current = null;
   }
 
-  // ✅ Submit to Flask backend
   async function handleAnalyze() {
     if (!imageUri) return Alert.alert('Please select or capture an image.');
 
@@ -83,7 +78,7 @@ export default function PlantAI() {
     data.append('language', 'hi');
 
     try {
-      const res = await fetch(`${BACKEND_URL}/analyze`, {
+      const res = await fetch(`http://192.168.1.100:5000/analyze`, {
         method: 'POST',
         headers: { 'Content-Type': 'multipart/form-data' },
         body: data

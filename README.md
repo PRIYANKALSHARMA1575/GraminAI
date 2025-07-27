@@ -1,119 +1,50 @@
-# 🌾 Farmer AI Assistant — Multilingual Smart Agriculture Platform 🇮🇳
+# Welcome to your Expo app 👋
 
-An **inclusive, AI-powered mobile and web application** empowering Indian farmers to detect plant diseases, access real-time market and weather insights, and stay updated on government schemes—all through images, voice, text, and rich multimedia. **Available in 23 official Indian languages**, the platform is under active development for scalability and innovative features.
+This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
----
+## Get started
 
-## 🚀 Key Features
+1. Install dependencies
 
-- ✅ **Plant Disease Detection** via image uploads or real-time camera (mobile & web).
-- ✅ **Voice-enabled Queries** using OpenAI Whisper for speech-to-text in regional languages.
-- ✅ **Vision-Language AI (Qwen-VL)** for instant, detailed crop health assessment in the farmer's chosen language.
-- ✅ **Market Price Prediction** tailored to specific crops, locations, and seasons.
-- ✅ **Real-Time Weather Alerts** powered by AI for hyperlocal smart farming decisions.
-- ✅ **Government Schemes Dashboard** — Up-to-date info on policies, subsidies, and programs.
-- ✅ **Agriculture News Feed** — Curated daily news, updates, and essential coverage.
-- ✅ **[NEW] Inclusive Multilingual UI** — Seamless navigation in all 23 Indian languages, optimized for rural usability.
+   ```bash
+   npm install
+   ```
 
----
+2. Start the app
 
-## 🛠️ Tech Stack
+   ```bash
+   npx expo start
+   ```
 
-| Area        | Technologies                                                                 |
-|-------------|------------------------------------------------------------------------------|
-| **Frontend**| **React Native** (Expo Go), React.js, HTML5/CSS3, JavaScript, React Webcam   |
-| **Backend** | **Python**, **Flask**, Node.js, REST APIs, PyTorch                            |
-| **AI/ML**   | **OpenAI Whisper** (Speech-to-Text), Qwen 2.5 Vision-Language (via OpenRouter), ElevenLabs (Text-to-Speech)<br>Future: Market Price Prediction, Weather AI Agent |
-| **Other**   | dotenv (Secrets Management), Pillow (Image Processing), Flask-CORS (CORS), Requests, Full Multilingual Support  |
+In the output, you'll find options to open the app in a
 
----
+- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
+- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
+- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
+- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
-## 🔗 AI Agent Integrations
+You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 
-- **OpenRouter** — Connects all vision-language and conversational AI for agricultural analysis.
-- **Whisper (OpenAI)** — Powers robust multilingual speech-to-text for local dialects and accents.
-- **ElevenLabs** — Delivers natural, regional-language voice feedback via advanced text-to-speech.
+## Get a fresh project
 
----
+When you're ready, run:
 
-## 🏗️ System Architecture
+```bash
+npm run reset-project
+```
 
-> React Native (Expo Go) & React.js frontend ⇆ Flask/Node.js backend ⇆ AI agents (OpenRouter, Whisper, ElevenLabs, custom inference models)  
-> All systems support **multilingual workflows and regional content delivery**.
+This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
 
----
+## Learn more
 
-## 🚀 How to Run Locally
+To learn more about developing your project with Expo, look at the following resources:
 
-git clone https://github.com/your-username/farmer-ai-assistant.git
-cd farmer-ai-assistant
+- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
+- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
 
-text
+## Join the community
 
-### Backend (Python/Flask)
-cd backend
-python -m venv venv
+Join our community of developers creating universal apps.
 
-For Windows:
-venv\Scripts\activate
-
-For macOS/Linux:
-source venv/bin/activate
-pip install -r requirements.txt
-python app.py
-
-text
-
-### Frontend (React Native/Expo Go)
-cd frontend
-npm install
-npx expo start
-
-text
-- Scan the QR code in Expo Go app (iOS/Android) or open the web version at [http://localhost:3000](http://localhost:3000/)
-
----
-
-## 🌍 Supported Languages
-
-🇮🇳 Supports **all 23 official Indian languages** including Hindi, Tamil, Telugu, Kannada, Malayalam, Bengali, Marathi, Punjabi, Gujarati, Assamese, Odia, Urdu, and more.
-
----
-
-## 📷 Insights
-
-_**Here is a quick video insight of what the AI Agent for plant pest-dosease detection and solutions that is compactible and usuable to almost all Indian Lamguages is shown in this video. Stay tuned for more such insights**
-
-https://youtu.be/wnN4rh_y_VE?feature=shared
-
-Insight 1
-
-<img width="829" height="859" alt="image" src="https://github.com/user-attachments/assets/1a340bd0-2f2f-483c-9748-ecec437c7404" />
-
-
-Insight 2
-<img width="1389" height="686" alt="image" src="https://github.com/user-attachments/assets/34f98f30-e0e7-439c-a88f-3f13e699bc6c" />
-
-
-
-_**App is under active development—screenshots and production preview will be available soon, however we will.keep updating with more insights, as of now starting with the AI Agent.**
-
----
-
-## 📡 Planned Features
-
-- 🌾 **Offline Mode** for remote, low-connectivity regions.
-- 🌦️ **Smart AI Crop Advisory** (weather, soil, and crop analysis).
-- 🎥 **Interactive Community Forums & Video Q&A** with agritech experts.
-- 🛡️ **Advanced Security & Privacy** features for user protection.
-
----
-
-## 📃 License
-
-Open-source under [MIT License](LICENSE).
-
-> _Empowering Indian Farmers with AI, One Language at a Time!_ 🇮🇳🌾
-
----
-_Last updated: Tuesday, July 25, 2025_
+- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
+- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
