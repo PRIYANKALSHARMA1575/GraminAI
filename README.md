@@ -30,8 +30,8 @@ An **AI-powered, multilingual mobile and web platform** enabling Indian farmers 
 
 | Layer         | Technologies                                                                      |
 |---------------|-----------------------------------------------------------------------------------|
-| **Frontend**  | React Native (Expo), React.js, HTML5, JavaScript, CSS3                            |
-| **Backend**   | Python, Flask, Node.js, REST APIs, dotenv                                         |
+| **Frontend**  | React Native (Expo), React.js, HTML5, JavaScript, CSS3, TypeScript                |
+| **Backend**   | Python, Flask, Node.js, REST APIs, dotenv, SQL for database                                       |
 | **ML/AI**     | PyTorch (Market Price Model), OpenAI Whisper (Speech-to-Text), Qwen-VL (Vision-Language), OpenRouter (LLM Orchestration) |
 | **Others**    | Joblib (Model Persistence), Pillow (Image Processing), Flask-CORS, Requests, Multilingual UI/UX |
 
