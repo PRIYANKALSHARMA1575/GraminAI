@@ -1,0 +1,206 @@
+/* General Body and App Container Styles */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f0f2f5;
+  color: #333;
+}
+
+.app-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 15px;
+  background-color: #ffffff;
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #2c5e2e; /* A nice green color */
+}
+
+.language-selector {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  font-size: 1rem;
+}
+
+/* Main Content and Step Container */
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.step-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.step-container h2 {
+  font-size: 1.4rem;
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+/* Button Styles */
+.big-button {
+  width: 100%;
+  padding: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.big-button:active {
+  transform: scale(0.98);
+}
+
+.big-button.primary {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+.big-button.secondary {
+  background-color: #e7e7e7;
+  color: #333;
+  border: 1px solid #ccc;
+}
+
+.small-button {
+  background: none;
+  border: none;
+  color: #555;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+/* Specific Component Styles */
+.webcam-view {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  border: 2px solid #ddd;
+}
+
+.capture-button {
+  background-color: #d32f2f; /* Red */
+  color: white;
+}
+
+.image-preview {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border: 2px solid #4CAF50;
+}
+
+.record-button.recording {
+  background-color: #f44336; /* Red when recording */
+  color: white;
+  animation: pulse 1.5s infinite;
+}
+
+.text-prompt {
+  width: 100%;
+  padding: 15px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  min-height: 80px;
+}
+
+.submit-button {
+  margin-top: 10px;
+}
+
+/* Loading Spinner */
+.spinner {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #4CAF50;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(244, 67, 54, 0.7); }
+  70% { box-shadow: 0 0 0 20px rgba(244, 67, 54, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(244, 67, 54, 0); }
+}
+
+/* Response and Error Styles */
+.response-box {
+  background-color: #e8f5e9; /* Light green background */
+  border-left: 5px solid #4CAF50;
+  padding: 15px;
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  border-radius: 0 8px 8px 0;
+}
+
+.response-box p {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.error-message {
+  color: #d32f2f;
+  background-color: #ffebee;
+  border: 1px solid #d32f2f;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
