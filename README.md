@@ -1,4 +1,4 @@
-<img width="570" height="916" alt="Screenshot 2025-09-11 222604" src="https://github.com/user-attachments/assets/327d0fa1-71b0-4789-b858-461bdaeb6a48" /># 🌱 Farmer AI Assistant — Smart Multilingual Agriculture Platform 🇮🇳  
+# 🌱 Farmer AI Assistant — Smart Multilingual Agriculture Platform 🇮🇳  
 
 ![Made with Flask](https://img.shields.io/badge/Made%20with-Flask-000000?logo=flask&logoColor=white)  
 ![React](https://img.shields.io/badge/Frontend-React.js-61DAFB?logo=react&logoColor=black)  
