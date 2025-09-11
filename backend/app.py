@@ -6,25 +6,18 @@ import base64
 import requests
 import whisper
 import tempfile
-from google.cloud import texttospeech
-from flask import send_file
 import io
+from flask import send_file
 
 # --- Configuration Loading ---
 load_dotenv()
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
-FRONTEND_URL = os.getenv("FRONTEND_URL", "http://localhost:5173/pest-disease") # Default for local dev.
-
-# === FIX 1 & 2: Set Google Credentials Path Correctly and Early ===
-# Construct the absolute path to the credentials file based on this script's location
-# This is more robust than a relative path.
-basedir = os.path.abspath(os.path.dirname(__file__))
-google_credentials_path = os.path.join(basedir, 'google-credentials.json')
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = google_credentials_path
+ELEVENLABS_API_KEY = os.getenv("ELEVENLABS_API_KEY")
+FRONTEND_URL = os.getenv("FRONTEND_URL", "http://localhost:3000")
 
 # --- App Initialization ---
 app = Flask(__name__)
-CORS(app, origins=[FRONTEND_URL])
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 # --- Model Loading ---
 print("Loading Whisper model...")
@@ -32,9 +25,8 @@ whisper_model = whisper.load_model("base")
 print("Whisper model loaded.")
 
 
-@app.route('/pest-disease/analyze', methods=['POST'])
+@app.route('/analyze', methods=['POST'])
 def analyze():
-    # ... (This entire function is perfect, no changes needed here) ...
     # --- 1. Validate Input ---
     if 'image' not in request.files:
         return jsonify({"error": "Image is required"}), 400
@@ -47,28 +39,24 @@ def analyze():
     # --- 3. Handle Audio Transcription (if necessary) ---
     if not prompt and 'audio' in request.files:
         audio_file = request.files['audio']
-        audio_path = None  # Initialize to ensure it exists for the finally block
+        audio_path = None
         try:
-            # Create a temporary file to save the audio
             with tempfile.NamedTemporaryFile(delete=False, suffix=".webm") as tmp:
                 audio_path = tmp.name
                 audio_file.save(audio_path)
             
-            # Transcribe the audio using Whisper
             result = whisper_model.transcribe(audio_path, language=language)
             prompt = result['text']
         except Exception as e:
-            # Log the detailed error for debugging
             print(f"Audio transcription failed: {str(e)}")
             return jsonify({"error": "Could not understand the audio. Please try again."}), 500
         finally:
-            # **Robust File Cleanup**
             if audio_path and os.path.exists(audio_path):
                 os.remove(audio_path)
 
-    # If after trying to transcribe, there's still no prompt, use a default one.
     if not prompt:
-        prompt = "Describe this image in detail."
+        # ### CHANGE: Updated default prompt for civic context
+        prompt = "Analyze this image and identify the civic issue shown."
 
     # --- 4. Prepare Data for AI Model ---
     language_map = {
@@ -78,11 +66,18 @@ def analyze():
     }
     language_name = language_map.get(language, "English")
 
+    # ### CHANGE: Finalized and corrected the system prompt for CivicAssist AI
     system_prompt = (
-        f"You are AgriHelper, an expert AI assistant for Indian farmers. "
-        f"Analyze the provided plant image and the user's question. "
-        f"Provide a clear, concise, and helpful answer. "
-        f"The user is asking their question in {language_name}. You MUST respond in {language_name}."
+        f"You are CivicAssist AI, an expert agent designed for city administrators."
+        f"Analyze the citizen's complaint (image, text, or voice) to identify the civic issue and its location."
+        f"Using AI, prioritize the issue, detect fakes, merge duplicates, and determine the responsible department."
+        f"Your response must be a structured resolution ticket ONLY, with no other conversational text."
+        f"The user is asking in this language {language_name}. You MUST generate the ticket and show it in this language {language_name}."
+        f"The ticket must strictly follow this format:\n"
+        f"Complaint ID: [Generate a random ID like SRxxxx]\n"
+        f"Location: [Identify location from the input]\n"
+        f"Responsible Department: [Name the department, e.g., Public Works, Sanitation, Water Board]\n"
+        f"Contact Person: [Generate a random Indian name and a random 10-digit phone number]"
     )
 
     # Encode image to base64
@@ -95,11 +90,13 @@ def analyze():
         "Authorization": f"Bearer {OPENROUTER_API_KEY}",
         "Content-Type": "application/json",
         "HTTP-Referer": FRONTEND_URL,
-        "X-Title": "Farmer Assistant"
+        # ### CHANGE: Updated the title for API tracking
+        "X-Title": "Civic Assistant" 
     }
 
     data = {
-        "model": "qwen/qwen2.5-vl-32b-instruct:free",
+        # NOTE: qwen is a good free model. You could also try "openai/gpt-4o" for potentially better results.
+        "model": "qwen/qwen2.5-vl-32b-instruct:free", 
         "messages": [
             {"role": "system", "content": system_prompt},
             {
@@ -135,27 +132,18 @@ def analyze():
         print(f"API Error: Status {status_code}, Body: {error_message}")
         return jsonify({"error": f"Analysis failed. The server said: {error_message}"}), status_code
 
-# ELEVENLABS_API_KEY=your_key_here
-ELEVENLABS_API_KEY = os.getenv("ELEVENLABS_API_KEY")
 
-# This dictionary maps our app's language codes to ElevenLabs' voice IDs.
+# ### CHANGE: Cleaned up the voice ID dictionary. 
 # You can find more voice IDs on the ElevenLabs website in the 'Voice Lab'.
-# I've selected some good ones for Indian languages.
 ELEVENLABS_VOICE_IDS = {
     "en": "21m00Tcm4TlvDq8ikWAM",  # Rachel (calm)
-    "hi": "FiIgWdzVKAalJyAgg8Pg",  # Multilingual v2 Model - Good for Hindi
+    "hi": "FiIgWdzVKAalJyAgg8Pg",  # Multilingual v2 Model
     "ta": "Z0ocGS7BSRxFSMhV00nB",  # Multilingual v2 Model
-    # "te": "29vD33N1CtxCmqQRPO9k",  # Multilingual v2 Model
-    # "bn": "29vD33N1CtxCmqQRPO9k",  # Multilingual v2 Model
-    # "gu": "29vD33N1CtxCmqQRPO9k",  # Multilingual v2 Model
-    # "kn": "29vD33N1CtxCmqQRPO9k",  # Multilingual v2 Model
-    # "ml": "29vD33N1CtxCmqQRPO9k",  # Multilingual v2 Model
-    # "mr": "29vD33N1CtxCmqQRPO9k",  # Multilingual v2 Model
+    # Add more voice IDs for other languages as needed.
 }
 
-@app.route('/pest-disease/text-to-speech', methods=['POST'])
+@app.route('/text-to-speech', methods=['POST'])
 def text_to_speech_conversion():
-    # Get the text and language from the frontend request
     data = request.get_json()
     text_to_speak = data.get('text')
     language = data.get('language')
@@ -163,42 +151,33 @@ def text_to_speech_conversion():
     if not text_to_speak or not language or not ELEVENLABS_API_KEY:
         return jsonify({"error": "Text, language, and API key are required"}), 400
 
-    # Get the correct voice ID for the selected language
-    voice_id = ELEVENLABS_VOICE_IDS.get(language, ELEVENLABS_VOICE_IDS["en"]) # Default to English
+    voice_id = ELEVENLABS_VOICE_IDS.get(language, ELEVENLABS_VOICE_IDS["en"])
 
-    # --- ElevenLabs API Call ---
     tts_url = f"https://api.elevenlabs.io/v1/text-to-speech/{voice_id}"
-
     headers = {
         "Accept": "audio/mpeg",
         "Content-Type": "application/json",
         "xi-api-key": ELEVENLABS_API_KEY
     }
-
     payload = {
         "text": text_to_speak,
-        "model_id": "eleven_multilingual_v2", # This model supports multiple languages
-        "voice_settings": {
-            "stability": 0.5,
-            "similarity_boost": 0.75
-        }
+        "model_id": "eleven_multilingual_v2",
+        "voice_settings": { "stability": 0.5, "similarity_boost": 0.75 }
     }
 
     try:
         response = requests.post(tts_url, json=payload, headers=headers)
-        response.raise_for_status() # Raise an exception for bad status codes
-
-        # Stream the audio response back to the frontend
+        response.raise_for_status()
         return send_file(
             io.BytesIO(response.content),
             mimetype='audio/mpeg',
             as_attachment=False
         )
-
     except requests.exceptions.RequestException as e:
         status_code = e.response.status_code if e.response is not None else 500
         print(f"ElevenLabs TTS Error: Status {status_code}, Response: {e.response.text if e.response is not None else 'N/A'}")
         return jsonify({"error": f"Failed to generate speech. The service said: {e.response.text}"}), status_code
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Set host='0.0.0.0' to make the app accessible on your local network
+    app.run(debug=True, host='0.0.0.0')
