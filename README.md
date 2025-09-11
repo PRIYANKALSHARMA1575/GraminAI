@@ -125,8 +125,6 @@ The AI Agent :- https://youtu.be/wnN4rh_y_VE
 
 <img width="570" height="916" alt="Screenshot 2025-09-11 222604" src="https://github.com/user-attachments/assets/f43a5b29-c902-4e47-b078-7c5757d01c36" />
 
-<img width="761" height="915" alt="Screenshot 2025-09-11 222301" src="https://github.com/user-attachments/assets/654ebdc9-c5a5-4020-a8a8-afda9b3ce53d" />
-
 <img width="852" height="919" alt="Screenshot 2025-09-11 222252" src="https://github.com/user-attachments/assets/eaf095e9-6c41-423a-8004-393491ada8d0" />
 
 <img width="348" height="400" alt="image" src="https://github.com/user-attachments/assets/475e0651-4070-4adc-9d2f-39296b91dedf" />
