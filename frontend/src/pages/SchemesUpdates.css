@@ -1,0 +1,66 @@
+.schemes-container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+  font-family: "Arial", sans-serif;
+  text-align: center;
+}
+
+.schemes-title {
+  font-size: 26px;
+  font-weight: bold;
+  color: #2e7d32; /* deep green */
+  margin-bottom: 25px;
+}
+
+.schemes-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.alert-card {
+  background: #f5f5dc; /* beige */
+  border-left: 6px solid #4caf50; /* green stripe */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: transform 0.2s, box-shadow 0.2s;
+  width: 100%;
+  max-width: 280px;
+}
+
+.alert-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.alert-card h3 {
+  color: #2e7d32; /* dark green for title */
+  margin-bottom: 8px;
+}
+
+.alert-date {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.alert-card p {
+  font-size: 15px;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .schemes-title {
+    font-size: 22px;
+  }
+
+  .alert-card {
+    max-width: 100%;
+  }
+}
