@@ -7,6 +7,7 @@ import { Image, ScrollView, View } from "react-native";
 // For example, if Index.tsx is 'app/index.tsx' and SearchBar.tsx is 'components/SearchBar.tsx'.
 import SearchBar from "@/components/SearchBar";
 import { useRouter } from "expo-router";
+import React from "react";
 
 export default function Index() {
     // These are hooks which expose extra functionalities

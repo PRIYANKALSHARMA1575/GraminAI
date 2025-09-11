@@ -1,6 +1,7 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
+    "jsx": "react",
     "strict": true,
     "baseUrl": ".", // Add this line: "." means the project root (where this tsconfig.json is)
     "paths": {
