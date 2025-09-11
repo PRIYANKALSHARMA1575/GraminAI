@@ -1,4 +1,4 @@
-# 🌱 Farmer AI Assistant — Smart Multilingual Agriculture Platform 🇮🇳
+# 🌱 Farmer AI Assistant — Smart Multilingual Agriculture Platform 🇮🇳 HELLO WORLD
 
 An **AI-powered, multilingual mobile and web platform** enabling Indian farmers to detect plant diseases, access real-time market price predictions, get instant government scheme updates, and receive expert crop advisories—via images, voice, or text in 23 official Indian languages.
 
