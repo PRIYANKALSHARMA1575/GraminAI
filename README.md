@@ -3,7 +3,6 @@
 ![Made with Flask](https://img.shields.io/badge/Made%20with-Flask-000000?logo=flask&logoColor=white)  
 ![React](https://img.shields.io/badge/Frontend-React.js-61DAFB?logo=react&logoColor=black)  
 ![PyTorch](https://img.shields.io/badge/AI-PyTorch-EE4C2C?logo=pytorch&logoColor=white)  
-![Expo](https://img.shields.io/badge/UI-Expo-000020?logo=expo&logoColor=white)  
 ![License](https://img.shields.io/badge/License-MIT-green)  
 
 An **AI-powered, multilingual web platform** enabling Indian farmers to detect plant diseases, access real-time market price predictions, get instant government scheme updates, and receive expert crop advisories—via **images, voice, or text in 23 official Indian languages**.  
