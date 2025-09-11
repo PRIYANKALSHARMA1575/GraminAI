@@ -135,7 +135,6 @@ The AI Agent :- https://youtu.be/wnN4rh_y_VE
 
 <img width="772" height="909" alt="image" src="https://github.com/user-attachments/assets/fc061440-995c-4b3b-8036-f67c0f7b914d" />
 
-<img width="1403" height="533" alt="image" src="https://github.com/user-attachments/assets/08c9e9b3-5621-4eb7-88c3-b0bc891f6b49" />
 
 ## 📃 License
 
