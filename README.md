@@ -49,7 +49,7 @@ The platform includes a **dedicated weather intelligence agent** that provides *
 - Delivers responses in the **farmer’s selected regional language** for accessibility and clarity.
 - Seamlessly integrates weather insights with **crop advisories and market prediction context**.
 
-This agent-based design ensures **accurate interpretation, reliable data retrieval, and clear communication**, enabling informed, location-specific agricultural decisions.
+This AI-based design ensures **accurate interpretation, reliable data retrieval, and clear communication**, enabling informed, location-specific agricultural decisions.
 
 ---
 
@@ -64,7 +64,7 @@ This agent-based design ensures **accurate interpretation, reliable data retriev
 
 ---
 
-## 🤖 AI Agent Architecture  
+## 🤖 AI Architecture  
 
 - **OpenRouter** → Orchestrates agent calls across text, vision, and voice.  
 - **Whisper** → Converts **regional speech → text**.  
@@ -78,7 +78,7 @@ This agent-based design ensures **accurate interpretation, reliable data retriev
 
 Farmer (Voice / Text / Image)
 ↓
-AI Agent (OpenRouter + Whisper + Qwen-VL + PyTorch)
+The AI (OpenRouter + Whisper + Qwen-VL + PyTorch)
 ↓
 ├─ Market Price Prediction
 ├─ Plant Disease Detection
@@ -87,10 +87,6 @@ AI Agent (OpenRouter + Whisper + Qwen-VL + PyTorch)
 ↓
 Response (Text + Audio in Farmer’s Language)
 
-yaml
-Copy code
-
----
 
 ## 🚀 How to Run Locally
 
@@ -126,14 +122,6 @@ Tap Get Prediction
 🌍 Languages Supported
 All 23 official Indian languages, enabling inclusive access for farmers across regions.
 
-📡 Planned Upgrades
-Live API integration for real-time crop and market data
-
-Offline support for low-connectivity regions
-
-Community forums and expert Q&A
-
-Advanced agentic reasoning for multi-turn conversations
 
 📸 Screenshots & Visual Insights
 See how the application supports Indian farmers:
@@ -141,6 +129,12 @@ See how the application supports Indian farmers:
 AI Disease Detector Demo: https://youtu.be/wnN4rh_y_VE
 
 (Images retained as provided)
+<img width="570" height="916" alt="Screenshot 2025-09-11 222604" src="https://github.com/user-attachments/assets/f43a5b29-c902-4e47-b078-7c5757d01c36" /> 
+<img width="852" height="919" alt="Screenshot 2025-09-11 222252" src="https://github.com/user-attachments/assets/eaf095e9-6c41-423a-8004-393491ada8d0" /> 
+<img width="583" height="895" alt="Screenshot 2025-09-11 222240" src="https://github.com/user-attachments/assets/2ac6a993-ba48-4042-bdd1-d9423df34b75" /> 
+<img width="348" height="400" alt="image" src="https://github.com/user-attachments/assets/475e0651-4070-4adc-9d2f-39296b91dedf" /> 
+<img width="691" height="632" alt="image" src="https://github.com/user-attachments/assets/74944448-0a28-4c44-a5b0-9bfdcfb0572c" /> 
+<img width="772" height="909" alt="image" src="https://github.com/user-attachments/assets/fc061440-995c-4b3b-8036-f67c0f7b914d" />
 
 📃 License
 Open-source under the MIT License
