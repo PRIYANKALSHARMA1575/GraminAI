@@ -23,11 +23,33 @@ An **AI-powered, multilingual web platform** enabling Indian farmers to detect p
 - **🏛️ Real-Time Government Scheme Dashboard**  
   Farmers receive **live updates** on central/state schemes, subsidies, and initiatives based on their **location and crops**.  
 
-- **☁️ Weather & Advisory Insights**  
-  AI-powered **localized weather tracking** and **farming practice recommendations** help farmers plan efficiently.  
-
 - **🌍 Multilingual Support**  
   Supports **all 23 Indian languages**, including Hindi, Tamil, Telugu, Kannada, Bengali, Marathi, Urdu, Gujarati, and more.  
+
+---
+
+## ☁️ Weather Intelligence & Advisory Agent  
+
+The platform includes a **dedicated weather intelligence agent** that provides **location-aware weather insights and crop advisories** through a structured, multi-agent workflow.
+
+### **How the Weather Agent Works**
+
+- **Query Analysis Agent**  
+  Interprets the farmer’s weather-related request (via voice, text, or contextual input) to extract **location**, **time range**, and relevant **crop context**.
+
+- **Weather Data Retrieval Agent**  
+  Uses the extracted parameters to perform **API calls to external weather services**, retrieving localized data such as **temperature, rainfall, humidity, and extreme weather indicators**.
+
+- **Insight & Visualization Agent**  
+  Processes raw weather data to generate **farmer-friendly insights**, and conditionally produces **visualizations (e.g., rainfall or temperature trends)** using Plotly when graphical representation is required.
+
+### **Farmer-Focused Output**
+
+- Provides **actionable advisories** for irrigation planning, harvesting windows, and weather risk mitigation.
+- Delivers responses in the **farmer’s selected regional language** for accessibility and clarity.
+- Seamlessly integrates weather insights with **crop advisories and market prediction context**.
+
+This agent-based design ensures **accurate interpretation, reliable data retrieval, and clear communication**, enabling informed, location-specific agricultural decisions.
 
 ---
 
@@ -54,92 +76,73 @@ An **AI-powered, multilingual web platform** enabling Indian farmers to detect p
 
 ## 🏗️ System Flow  
 
+Farmer (Voice / Text / Image)
+↓
+AI Agent (OpenRouter + Whisper + Qwen-VL + PyTorch)
+↓
+├─ Market Price Prediction
+├─ Plant Disease Detection
+├─ Government Scheme Updates
+├─ Weather Intelligence & Advisories
+↓
+Response (Text + Audio in Farmer’s Language)
 
-  Farmer[👩‍🌾 Farmer Input (Voice/Text/Image)] 
-  --> Agent[🤖 AI Agent (OpenRouter + Whisper + Qwen-VL + PyTorch)]
-  Agent --> Market[📈 Market Price Prediction]
-  Agent --> Disease[🌾 Plant Disease Detection]
-  Agent --> Schemes[🏛️ Govt Schemes Updates]
-  Agent --> Weather[☁️ Weather & Crop Advisories]
-  Agent --> Response[🔊 Reply in Farmer’s Language (Text + Audio)]
+yaml
+Copy code
 
 ---
 
 ## 🚀 How to Run Locally
 
 1. **Clone the Repository**
+
 git clone https://github.com/your-username/farmer-ai-assistant.git
 cd farmer-ai-assistant
+Backend (Flask / Python)
 
-text
 
-2. **Backend (Flask/Python)**
 cd backend
 python -m venv venv
-
-Activate:
-venv\Scripts\activate # (Windows) OR source venv/bin/activate (Linux/Mac)
+venv\Scripts\activate   # Windows
+# or source venv/bin/activate (Linux/Mac)
 pip install -r requirements.txt
 python app.py
+Frontend (React / Expo)
 
-text
 
-3. **Frontend (React Native/Expo)**
 cd frontend
 npm install
 npx expo start
+Open via Expo Go app or at http://localhost:3000.
 
-text
-Open with Expo Go app or on web (`http://localhost:3000`).
+🧑‍🌾 Market Prediction Demo
+Navigate to Market Prediction
 
----
+Enter Crop, State, and recent prices
 
-## 🧑‍🌾 Market Prediction Demo
+Tap Get Prediction
+→ View projected price, best mandi suggestions, and region-specific advice.
 
-1. **Navigate to the "Market Prediction" tab**
-2. **Enter Crop, State**, and **recent prices** (today, last week, last month, last year)
-3. **Tap "Get Prediction"**  
-→ See tomorrow’s projected price, location-based advice, and best market options.
+🌍 Languages Supported
+All 23 official Indian languages, enabling inclusive access for farmers across regions.
 
----
+📡 Planned Upgrades
+Live API integration for real-time crop and market data
 
-## 🌍 Languages Supported
+Offline support for low-connectivity regions
 
-India’s **23 official languages**—choose your regional language for all interactions and receive AI advisories the way you want.
+Community forums and expert Q&A
 
----
+Advanced agentic reasoning for multi-turn conversations
 
-## 📡 Planned Upgrades
+📸 Screenshots & Visual Insights
+See how the application supports Indian farmers:
 
-- **Live API integration** for up-to-date crop and market data
-- **Offline support** for rural connectivity
-- **Community forums & video expert Q&A**
-- **Advanced agentic reasoning for context-rich conversations**
+AI Disease Detector Demo: https://youtu.be/wnN4rh_y_VE
 
----
-## 📸 Screenshots & Visual Insights
+(Images retained as provided)
 
-See how the application would help the farmers of India:-
+📃 License
+Open-source under the MIT License
 
-The AI Disease Detector:- https://youtu.be/wnN4rh_y_VE
-
-<img width="570" height="916" alt="Screenshot 2025-09-11 222604" src="https://github.com/user-attachments/assets/f43a5b29-c902-4e47-b078-7c5757d01c36" />
-
-<img width="852" height="919" alt="Screenshot 2025-09-11 222252" src="https://github.com/user-attachments/assets/eaf095e9-6c41-423a-8004-393491ada8d0" />
-
-<img width="583" height="895" alt="Screenshot 2025-09-11 222240" src="https://github.com/user-attachments/assets/2ac6a993-ba48-4042-bdd1-d9423df34b75" />
-
-<img width="348" height="400" alt="image" src="https://github.com/user-attachments/assets/475e0651-4070-4adc-9d2f-39296b91dedf" />
-
-<img width="691" height="632" alt="image" src="https://github.com/user-attachments/assets/74944448-0a28-4c44-a5b0-9bfdcfb0572c" />
-
-<img width="772" height="909" alt="image" src="https://github.com/user-attachments/assets/fc061440-995c-4b3b-8036-f67c0f7b914d" />
-
-
-## 📃 License
-
-Open-source under [MIT License](LICENSE)
-
-> _Empowering Indian farmers with AI-driven, inclusive solutions—one language, one region, one question at a time._ 🇮🇳🌾
-
----
+Empowering Indian farmers with AI-driven, inclusive solutions—one language, one region, one question at a time. 🇮🇳🌾
