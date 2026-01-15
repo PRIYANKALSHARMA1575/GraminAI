@@ -88,29 +88,6 @@ The AI (OpenRouter + Whisper + Qwen-VL + PyTorch)
 Response (Text + Audio in Farmer’s Language)
 
 
-## 🚀 How to Run Locally
-
-1. **Clone the Repository**
-
-git clone https://github.com/your-username/farmer-ai-assistant.git
-cd farmer-ai-assistant
-Backend (Flask / Python)
-
-
-cd backend
-python -m venv venv
-venv\Scripts\activate   # Windows
-# or source venv/bin/activate (Linux/Mac)
-pip install -r requirements.txt
-python app.py
-Frontend (React / Expo)
-
-
-cd frontend
-npm install
-npx expo start
-Open via Expo Go app or at http://localhost:3000.
-
 🧑‍🌾 Market Prediction Demo
 Navigate to Market Prediction
 
@@ -123,20 +100,27 @@ Tap Get Prediction
 All 23 official Indian languages, enabling inclusive access for farmers across regions.
 
 
-📸 Screenshots & Visual Insights
+# 📸 Screenshots & Visual Insights
 See how the application supports Indian farmers:
 
-AI Disease Detector Demo: https://youtu.be/wnN4rh_y_VE
+# AI Disease Detector Demo: https://youtu.be/wnN4rh_y_VE
 
-(Images retained as provided)
+# The project images: 
+
 <img width="570" height="916" alt="Screenshot 2025-09-11 222604" src="https://github.com/user-attachments/assets/f43a5b29-c902-4e47-b078-7c5757d01c36" /> 
+
 <img width="852" height="919" alt="Screenshot 2025-09-11 222252" src="https://github.com/user-attachments/assets/eaf095e9-6c41-423a-8004-393491ada8d0" /> 
+
 <img width="583" height="895" alt="Screenshot 2025-09-11 222240" src="https://github.com/user-attachments/assets/2ac6a993-ba48-4042-bdd1-d9423df34b75" /> 
+
 <img width="348" height="400" alt="image" src="https://github.com/user-attachments/assets/475e0651-4070-4adc-9d2f-39296b91dedf" /> 
+
 <img width="691" height="632" alt="image" src="https://github.com/user-attachments/assets/74944448-0a28-4c44-a5b0-9bfdcfb0572c" /> 
+
 <img width="772" height="909" alt="image" src="https://github.com/user-attachments/assets/fc061440-995c-4b3b-8036-f67c0f7b914d" />
 
 📃 License
+
 Open-source under the MIT License
 
 Empowering Indian farmers with AI-driven, inclusive solutions—one language, one region, one question at a time. 🇮🇳🌾
