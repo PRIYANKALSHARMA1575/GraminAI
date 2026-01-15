@@ -121,7 +121,7 @@ India’s **23 official languages**—choose your regional language for all inte
 
 See how the application would help the farmers of India:-
 
-The AI Agent :- https://youtu.be/wnN4rh_y_VE
+The AI Disease Detector:- https://youtu.be/wnN4rh_y_VE
 
 <img width="570" height="916" alt="Screenshot 2025-09-11 222604" src="https://github.com/user-attachments/assets/f43a5b29-c902-4e47-b078-7c5757d01c36" />
 
